@@ -23,3 +23,29 @@ typedef struct { //typedef로 구조체 정의 해주어 선언시마다 struct�
     int standardPrice;
     int starNum; 
 }Snack; //이름 정의
+
+
+int selectMenu(); 
+
+/*2. 점수 추가 기능 구현*/
+int addSnack(Snack *s); 
+/*3. 입력한 점수 출력 기능 구현*/
+void readSnack(Snack s);
+/*4. 입력된 점수 수정 기능 구현*/
+int updateSnack(Snack *s);
+/*4. 입력된 점수 삭제 기능 구현*/
+int deleteSnack(Snack *s); 
+
+/*7. 다중 데이터 처리 구현*/
+void listSnack(Snack *s, int count); 
+int selectSnack(Snack *s, int count); 
+
+/*8. 파일 저장/불러오기 기능 구현*/
+void saveSnackList(Snack *s, int count);
+int loadSnackList(Snack s[]);
+
+/*9. 검색 기능 구현*/
+void searchSnackName(Snack *s, int count); 
+void searchSnackPrice(Snack *s, int count); 
+void searchSnackStarNum(Snack *s, int count); 
+
