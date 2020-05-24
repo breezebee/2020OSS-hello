@@ -49,3 +49,27 @@ void searchSnackName(Snack *s, int count);
 void searchSnackPrice(Snack *s, int count); 
 void searchSnackStarNum(Snack *s, int count); 
 
+int selectMenu(){ 
+    int menu;
+    printf("\n==과자관리 프로그램==\n");
+    printf("1. 조회\n2. 추가\n3. 수정\n4. 삭제\n5. 저장\n6. 검색\n0. 종료\n\n");
+    printf("원하는 메뉴는? ");
+    scanf("%d", &menu);
+    return menu;
+}
+
+int addSnack(Snack *s){ //정보 직접 수정: 포인터로 받음
+    printf("제품명은? ");
+    getchar();
+    fgets(s->name, 50, stdin);
+    printf("중량은? ");
+    scanf("%d", &s->weight);
+    printf("가격은? ");
+    scanf("%d", &s->price);
+    printf("표준가격은? ");
+    scanf("%d", &s->standardPrice);
+    printf("별점수은? ");
+    scanf("%d", &s->starNum);
+    printf("\n=> 추가됨!\n");
+    return 1; //잘 추가 되었는지 1 리턴
+}
