@@ -73,3 +73,22 @@ int addSnack(Snack *s){ //정보 직접 수정: 포인터로 받음
     printf("\n=> 추가됨!\n");
     return 1; //잘 추가 되었는지 1 리턴
 }
+
+void readSnack(Snack s){ 
+    printf("%8d원 %3dg %7d원 %4d점  %s", s.price, s.weight, s.standardPrice, s.starNum, s.name);
+}
+int updateSnack(Snack *s){ //정보 직접 수정: 포인터로 받음
+    printf("제품명은? ");
+    getchar();
+    fgets(s->name, 50, stdin);
+    printf("중량은? ");
+    scanf("%d", &s->weight);
+    printf("가격은? ");
+    scanf("%d", &s->price);
+    printf("표준가격은? ");
+    scanf("%d", &s->standardPrice);
+    printf("별점수은? ");
+    scanf("%d", &s->starNum);
+    printf("=> 수정됨!\n");
+    return 1; //제대로 추가 되었는지 1 리턴
+}
