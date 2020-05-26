@@ -92,3 +92,11 @@ int updateSnack(Snack *s){ //정보 직접 수정: 포인터로 받음
     printf("=> 수정됨!\n");
     return 1; //제대로 추가 되었는지 1 리턴
 }
+int deleteSnack(Snack *s){ //정보 직접 수정: 포인터로 받음
+    s->weight= -1; 
+    s->price= -1;
+    s->standardPrice= -1;
+    s->starNum= -1;
+    printf("=> 삭제됨!\n");
+    return 1; //삭제가 제대로 되었는지 확인
+}
