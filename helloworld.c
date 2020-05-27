@@ -117,3 +117,11 @@ void listSnack(Snack *s, int count){
     }
 }
 
+int selectSnack(Snack *s, int count){ 
+    //리스트를 보여줘야하기 때문에 배열 변수
+	int num;
+	listSnack(s, count);
+    printf("번호를 고르세요 (취소: 0) ");
+	scanf("%d", &num);
+	return num;
+}
