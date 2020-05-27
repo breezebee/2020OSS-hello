@@ -100,3 +100,20 @@ int deleteSnack(Snack *s){ //정보 직접 수정: 포인터로 받음
     printf("=> 삭제됨!\n");
     return 1; //삭제가 제대로 되었는지 확인
 }
+
+
+void listSnack(Snack *s, int count){ 
+    //배열을 보내줌: 첫번째 두번째 세번째 등 반복문을 돌려야하므로
+    //count: 몇번째 인덱스까지 입력 되었는지
+    printf("\n번호    가격  중량 표준가격 별점수  제품명");
+    printf("\n========================================\n");
+    for(int i = 0; i< count; i++){
+    if(s[i].weight == -1 && s[i].price == -1 && s[i].standardPrice == -1 && s[i].starNum){
+        continue;
+    }
+    printf("%2d", i+1);
+    readSnack(s[i]);
+    printf("\n");
+    }
+}
+
