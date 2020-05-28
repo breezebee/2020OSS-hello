@@ -125,3 +125,17 @@ int selectSnack(Snack *s, int count){
 	scanf("%d", &num);
 	return num;
 }
+
+
+void saveSnackList(Snack *s, int count){ //데이터 배열변수를 넘김
+    FILE *fp; //파일 포인터 생성
+    fp = fopen("snack.txt", "wt"); //파일 열기 fopen()
+    for(int i=0; i<count; i++){ 
+            //파일에 데이터 출력(쓰기) fprintf() fputs()
+            if(s[i].weight != -1 || s[i].price != -1 || s[i].standardPrice != -1 || s[i].starNum != -1){
+                    fprintf(fp,"%d %d %d %d %s", s[i].price, s[i].weight, s[i].standardPrice, s[i].starNum, s[i].name);
+            }
+    }
+    fclose(fp); //파일 닫기
+    printf("저장됨!\n");
+}
