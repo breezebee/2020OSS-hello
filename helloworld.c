@@ -139,3 +139,22 @@ void saveSnackList(Snack *s, int count){ //데이터 배열변수를 넘김
     fclose(fp); //파일 닫기
     printf("저장됨!\n");
 }
+int loadSnackList(Snack *s){ //데이터 배열변수를 넘김
+    int count = 0;
+    FILE *fp; //파일 포인터 생성
+    fp = fopen("snack.txt", "rt"); //파일 열기 fopen()
+    if(fp == NULL){ //파일이 없다면 종료
+            printf("=> 파일 없음\n");
+            return 0;
+    }
+    for( ; ; count++){
+            //파일에 데이터 입력(읽기)
+            fscanf(fp,"%d %d %d %d %[^\n]", &s[count].price, &s[count].weight, &s[count].standardPrice, &s[count].starNum, s[count].name);
+            if(feof(fp)){ //파일의 끝
+                    break;
+            }
+    }
+    fclose(fp);
+    printf("=>로딩 성공\n");
+    return count; //count 리턴
+}
