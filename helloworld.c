@@ -158,3 +158,24 @@ int loadSnackList(Snack *s){ //데이터 배열변수를 넘김
     printf("=>로딩 성공\n");
     return count; //count 리턴
 }
+
+
+void searchSnackName(Snack *s, int count){ //배열변수를 넘김
+	int scount = 0;
+	char search[50];
+	printf("검색할 이름은?");
+	scanf("%s", search);
+	printf("\n번호    가격  중량 표준가격 별점수  제품명");
+	printf("\n========================================\n");
+	for(int i =0; i<count; i++){
+		if(strstr(s[i].name, search)){
+			printf("%2d", i+1);
+			readSnack(s[i]);
+			printf("\n");
+			scount++;
+		}
+	}
+	if(scount == 0){
+                printf("=> 검색된 데이터 없음!");
+	} 
+}
