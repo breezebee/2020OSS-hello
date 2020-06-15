@@ -223,3 +223,14 @@ void searchSnackStarNum(Snack *s, int count){
 		printf("검색된 데이터 없음!");
 	}
 } 
+
+int main(void){
+// #ifdef DEBUG
+// 	printf("Debug: [%s : %d] %s\n",__FILE__,__LINE__,__func__);
+// #endif
+    Snack s[100]; //배열변수
+    int count = 0, menu = 0;
+    int curcount = 0; //현재 입력받는 사람이 몇번째인지
+    count = loadSnackList(s);
+    curcount = count;
+
